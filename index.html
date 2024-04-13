@@ -147,12 +147,13 @@
           returnAttributes: ["id", "name"],
           constraintAttribute: "id",
           displayAttribute: "name",
-          autoExpandRelations: true, // if set to true Person nodes will be automatically expanded in graph
+          autoExpandRelations: true,
         },
         Resource: {
           returnAttributes: ["id", "name", "description"],
           displayAttribute: "name",
           constraintAttribute: "id",
+          autoExpandRelations: true,
         },
         DocumentSection: {
           returnAttributes: ["id", "name"],
@@ -172,6 +173,21 @@
         Source: {
           returnAttributes: ["id", "sourceType"],
           displayAttribute: "sourceType",
+          constraintAttribute: "id",
+        },
+        Perspective: {
+          returnAttributes: ["id", "name", "notes"],
+          displayAttribute: "name",
+          constraintAttribute: "id",
+        },
+        Step: {
+          returnAttributes: ["id", "description"],
+          displayAttribute: "description",
+          constraintAttribute: "id",
+        },
+        Relation: {
+          returnAttributes: ["id", "label", "from", "to"],
+          displayAttribute: "label",
           constraintAttribute: "id",
         },
       }
@@ -203,7 +219,7 @@
       popoto.logger.LEVEL = popoto.logger.LogLevels.INFO
 
       // don't display counts
-      popoto.graph.DISABLE_COUNT = true
+      popoto.graph.DISABLE_COUNT = false
 
       popoto.graph.link.SHOW_MARKER = true
 

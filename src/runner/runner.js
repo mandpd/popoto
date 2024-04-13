@@ -66,7 +66,7 @@ runner.toObject = function (results) {
     return rs.records.map(function (r) {
       const obj = {}
       r.keys.forEach((key, i) => {
-        obj[key] = r._fields[i]
+        obj[key] = key === "count" ? r._fields[i].low : r._fields[i] //  returns bigint values high and low - hi is the high 32 bits and lo is the low 32 bits. Can usually take just the lo value
       })
       return obj
     })
